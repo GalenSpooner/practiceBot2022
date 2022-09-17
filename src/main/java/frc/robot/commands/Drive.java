@@ -6,7 +6,7 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.DriveTrain;
 
-import frc.robot.subsystems.ExampleSubsystem;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Subsystem;
@@ -36,7 +36,7 @@ public class Drive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_drivetrain.ArcadeDrive(m_joystick.getY(),m_joystick.getY());
+    m_drivetrain.ArcadeDrive(m_joystick.getX(),m_joystick.getY());
     
   }
 
