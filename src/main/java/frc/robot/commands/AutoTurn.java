@@ -9,13 +9,13 @@ public class AutoTurn extends CommandBase {
     private DriveTrain drive;
     private double speed;
     private double time;
-    private final double secondsPerDegree = (1.0/39.0);
+    private final double secondsPerDegree = (1.0/38.0);
 
     public AutoTurn(DriveTrain dt,double degrees,double speed){
         addRequirements(dt);
         drive = dt;
         this.speed = speed;
-        this.time = secondsPerDegree * degrees;
+        this.time = secondsPerDegree * speed * degrees    ;
         //this.time = degrees;
 
     }

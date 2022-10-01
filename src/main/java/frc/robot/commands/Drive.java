@@ -5,8 +5,7 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.DriveTrain;
-
-
+import edu.wpi.first.math.filter.SlewRateLimiter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Subsystem;
@@ -16,6 +15,7 @@ public class Drive extends CommandBase {
   @SuppressWarnings({ "PMD.UnusedPrivateField", "PMD.SingularField" })
   private final DriveTrain m_drivetrain;
   private final Joystick m_joystick;
+  private SlewRateLimiter acc_lim;
 
   /**
    * Creates a new ExampleCommand.
@@ -25,6 +25,7 @@ public class Drive extends CommandBase {
   public Drive(DriveTrain dt, Joystick j) {
     m_drivetrain = dt;
     m_joystick = j;
+    acc_lim = new SlewRateLimiter(2);
     addRequirements(dt);
     // Use addRequirements() here to declare subsystem dependencies.
     
@@ -37,7 +38,7 @@ public class Drive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_drivetrain.ArcadeDrive(m_joystick.getX(),m_joystick.getY());
+    m_drivetrain.ArcadeDrive(acc_lim.calculate(m_joystick.getX()),m_joystick.getY());
     
   }
 

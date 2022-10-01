@@ -34,7 +34,7 @@ public class DriveTrain extends SubsystemBase {
     
   }
   public void ArcadeDrive(double x, double y){
-    dd_drive.arcadeDrive(x, y);
+    dd_drive.arcadeDrive(x*.8, y*.8);
   }
   
   
