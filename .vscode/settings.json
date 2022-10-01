@@ -13,6 +13,7 @@
     "**/.settings": true,
     "**/.factorypath": true,
     "**/*~": true
+<<<<<<< HEAD
   },
   "java.test.config": [
     {
@@ -26,4 +27,7 @@
     },
   ],
   "java.test.defaultConfig": "WPIlibUnitTests"
+=======
+  }
+>>>>>>> 88b64ec614beaaf9416054e8264e345b29aa8f7d
 }

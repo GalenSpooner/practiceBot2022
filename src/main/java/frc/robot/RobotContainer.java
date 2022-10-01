@@ -14,6 +14,7 @@ import frc.robot.commands.Drive;
 
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.MotorOne;
+
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -29,7 +30,6 @@ public class RobotContainer {
   private final Joystick j_joystick = new Joystick(Constants.Controls.CONTROLS_USB_JOYSTICK);
   private final Auto a_auto = new Auto(m_drivetrain,m_one);
  
-
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */

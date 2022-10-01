@@ -23,7 +23,6 @@ public class AutoMove extends CommandBase {
         timey.start();
     }
     public void execute(){
-        
         drive.ArcadeDrive(0.0, -speed);
     }
     @Override
@@ -31,7 +30,6 @@ public class AutoMove extends CommandBase {
       drive.ArcadeDrive(0,0);
       timey.stop();
       timey.reset();
-      
     }
     @Override
     public boolean isFinished(){
