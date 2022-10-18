@@ -15,8 +15,16 @@ public class AutoTurn extends CommandBase {
         addRequirements(dt);
         drive = dt;
         this.speed = speed;
-        this.time = secondsPerDegree * speed * degrees    ;
+        this.time = secondsPerDegree * speed * degrees;
         //this.time = degrees;
+        if (degrees < 0){
+            speed *= -1;
+        } else if (degrees > 180) {
+            
+            degrees = 180 - (degrees-180) 
+            speed *= -1;
+        }
+        
 
     }
     @Override
@@ -27,7 +35,7 @@ public class AutoTurn extends CommandBase {
     }
     public void execute(){
         drive.ArcadeDrive(speed, 0);
-        System.out.println("line ");
+        
     }
     @Override
     public void end(boolean interrupted) {
